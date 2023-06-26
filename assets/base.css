@@ -80,34 +80,32 @@ body.basic_flexbox {
 	justify-content: flex-start;
 }
 h1 {
-    font-family: var(--fancy-heading-fontFamily);
+	font-family: var(--fancy-heading-fontFamily);
 	color: var(--photons-color);
 	text-align: center;
 	border-radius: 1rem;
 	border: 5px dashed;
 	padding: 1rem;
 	width: fit-content;
-    
+
 	line-height: 3rem;
 }
-h1 a{
-
-  animation: neonEffect 2s infinite;
-  animation-delay: 1s;
+h1 a {
+	animation: neonEffect 2s infinite;
+	animation-delay: 1s;
 }
 
 @keyframes neonEffect {
-  0% {
-    color: var(--lighter-photons-color);
-  }
-  50% {
-    color: var(--lightest-photons-color);
-  }
-  100% {
-    color: var(--lighter-photons-color);
-  }
+	0% {
+		color: var(--lighter-photons-color);
+	}
+	50% {
+		color: var(--lightest-photons-color);
+	}
+	100% {
+		color: var(--lighter-photons-color);
+	}
 }
-
 
 .torch_div {
 	user-select: none;
@@ -202,15 +200,6 @@ h1 a{
 	opacity: 0.5;
 }
 
-@media screen and (max-width: 930px) {
-	.torch_div {
-		top: 21vh;
-	}
-	.textdiv {
-		padding: 1rem;
-	}
-}
-
 .projectsDiv {
 	width: 90%;
 	padding: 1rem;
@@ -222,12 +211,17 @@ h1 a{
 .projectDiv {
 	cursor: pointer;
 	border-radius: 1rem;
-    border: 3px solid var(--photons-color);
-    min-width: 20rem;
-    min-height: 10rem;
+	border: 3px solid var(--photons-color);
+
+	min-width: 25rem;
+	min-height: 12rem;
+	background-size: cover;
+	background-position: center;
+
 }
+
 .projectDivOverlay {
-display: none;
+	display: none;
 
 	width: 100%;
 	flex: 1;
@@ -241,35 +235,65 @@ display: none;
 
 	transition: 3s ease;
 }
-.projectDivOverlay a{
-    margin: .5rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border: 2px solid var(--photons-color);
+.projectDivOverlay a {
+	margin: 0.5rem;
+	padding: 1rem;
+	font-size: 1rem;
+	border: 2px solid var(--photons-color);
 
-    background-color: var(--dark-brown);
-    border-radius: 1rem;
-    font-family: var(--monospace-font-family);
-    font-weight: 900;
-
-
+	background-color: var(--dark-brown);
+	border-radius: 1rem;
+	font-family: var(--monospace-font-family);
+	font-weight: 900;
 }
 
-
-.projectDiv:hover .projectDivOverlay{
-    display: flex;
+.projectDiv:hover .projectDivOverlay {
+	display: flex;
 }
-
-
-
 
 #arito {
-    background: url('projects/arito/arito.gif');
+	background: url('projects/arito/arito.gif');
 	background-size: cover;
 }
 
-
 #techdiagrams {
-    background: url('projects/techdiagrams/techdiagrams.gif');
+	background: url('projects/techdiagrams/techdiagrams.gif');
 	background-size: cover;
+}
+
+@media screen and (max-width: 930px) {
+	.torch_div {
+		top: 25vh;
+
+		width: 4rem;
+		height: 4rem;
+	}
+	.textdiv {
+		padding: 1rem;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+	.torch_div {
+		top: 25vh;
+
+		width: 3rem;
+		height: 3rem;
+	}
+	.textdiv {
+		padding: 1rem;
+        text-align: center;
+	}
+
+    .left_top{
+        top: 100vh;
+    }
+	.projectDiv {
+
+		min-width: 90%;
+		min-height: 10rem;
+	}
 }
