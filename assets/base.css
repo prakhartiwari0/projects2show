@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,500;0,600;0,700;1,100;1,200;1,400;1,500;1,600;1,700&display=swap');
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+:root {
+	--photons-hue: 30;
+	--photons-saturation: 100%;
+	--photons-lightness: 50%;
+
+	--lightest-photons-color: hsl(
+		var(--photons-hue),
+		var(--photons-saturation),
+		var(--photons-lightness)
+	);
+	--lighter-photons-color: hsla(
+		var(--photons-hue),
+		var(--photons-saturation),
+		var(--photons-lightness),
+		0.4
+	);
+	--photons-color: hsla(
+		var(--photons-hue),
+		var(--photons-saturation),
+		var(--photons-lightness),
+		0.837
+	);
+
+	--dark-brown-hue: 22;
+	--dark-brown-saturation: 46%;
+	--dark-brown-lightness: 8%;
+
+	--dark-brown: hsl(
+		var(--dark-brown-hue),
+		var(--dark-brown-saturation),
+		var(--dark-brown-lightness)
+	);
+
+	--fancy-heading-fontFamily: 'Press Start 2P', cursive;
+	--monospace-font-family: 'IBM Plex Mono', monospace;
+}
+
+.basic_flexbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+::selection {
+	background-color: var(--lightest-photons-color);
+	color: var(--dark-brown);
+}
+
+.general_links {
+	text-decoration: none;
+	color: var(--lighter-photons-color);
+}
+.general_links:hover {
+	color: var(--lightest-photons-color);
+}
+
+body.basic_flexbox {
+	background-color: var(--dark-brown);
+	color: white;
+	position: relative;
+
+	min-height: 100vh;
+	padding: 1rem;
+	border: 5px solid var(--lightest-photons-color);
+
+	justify-content: flex-start;
+}
+h1 {
+    font-family: var(--fancy-heading-fontFamily);
+	color: var(--photons-color);
+	text-align: center;
+	border-radius: 1rem;
+	border: 5px dashed;
+	padding: 1rem;
+	width: fit-content;
+    
+	line-height: 3rem;
+}
+h1 a{
+
+  animation: neonEffect 2s infinite;
+  animation-delay: 1s;
+}
+
+@keyframes neonEffect {
+  0% {
+    color: var(--lighter-photons-color);
+  }
+  50% {
+    color: var(--lightest-photons-color);
+  }
+  100% {
+    color: var(--lighter-photons-color);
+  }
+}
+
+
+.torch_div {
+	user-select: none;
+	cursor: pointer;
+	position: absolute;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 1rem;
+
+	z-index: 9;
+}
+
+.blank_torch {
+	opacity: 0.5;
+	background-color: transparent;
+}
+.blank_torch:hover {
+	opacity: 0.7;
+}
+
+.lighted_torch {
+	background-color: var(--lighter-photons-color);
+	box-shadow: 0px 0px 155px 55px var(--photons-color);
+
+	animation: flamesLight 2s infinite;
+}
+@keyframes flamesLight {
+	0% {
+		box-shadow: 0px 0px 155px 55px var(--photons-color);
+	}
+	25% {
+		box-shadow: 0px 0px 160px 60px var(--photons-color);
+	}
+	50% {
+		box-shadow: 0px 0px 165px 65px var(--photons-color);
+	}
+	75% {
+		box-shadow: 0px 0px 160px 60px var(--photons-color);
+	}
+	100% {
+		box-shadow: 0px 0px 155px 55px var(--photons-color);
+	}
+}
+
+.lights {
+	cursor: pointer;
+	border-radius: 100%;
+	margin: auto;
+	position: absolute;
+	width: 100%;
+}
+
+.left_top {
+	left: 0rem;
+	top: 0rem;
+	rotate: 30deg;
+}
+.right_top {
+	right: 0rem;
+	top: 0rem;
+	rotate: -30deg;
+}
+
+.textdiv {
+	font-family: var(--monospace-font-family);
+	margin: 2rem;
+	padding: 5rem;
+	padding-inline: 10rem;
+}
+
+.textdiv p {
+	position: relative;
+	display: inline;
+	transition: opacity 0.3s ease;
+}
+
+.textdiv p span {
+	transition: opacity 0.3s ease;
+}
+
+.textdiv p:hover span {
+	opacity: 1;
+}
+
+.textdiv p span.fade {
+	opacity: 0.5;
+}
+
+@media screen and (max-width: 930px) {
+	.torch_div {
+		top: 21vh;
+	}
+	.textdiv {
+		padding: 1rem;
+	}
+}
+
+.projectsDiv {
+	width: 90%;
+	padding: 1rem;
+	flex-direction: row;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.projectDiv {
+	cursor: pointer;
+	border-radius: 1rem;
+    border: 3px solid var(--photons-color);
+    min-width: 20rem;
+    min-height: 10rem;
+}
+.projectDivOverlay {
+display: none;
+
+	width: 100%;
+	flex: 1;
+	border-radius: inherit;
+	background-color: hsl(
+		var(--dark-brown-hue),
+		var(--dark-brown-saturation),
+		var(--dark-brown-lightness),
+		0.5
+	);
+
+	transition: 3s ease;
+}
+.projectDivOverlay a{
+    margin: .5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--photons-color);
+
+    background-color: var(--dark-brown);
+    border-radius: 1rem;
+    font-family: var(--monospace-font-family);
+    font-weight: 900;
+
+
+}
+
+
+.projectDiv:hover .projectDivOverlay{
+    display: flex;
+}
+
+
+
+
+#arito {
+    background: url('projects/arito/arito.gif');
+	background-size: cover;
+}
+
+
+#techdiagrams {
+    background: url('projects/techdiagrams/techdiagrams.gif');
+	background-size: cover;
+}
