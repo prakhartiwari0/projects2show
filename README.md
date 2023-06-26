@@ -2,7 +2,7 @@
 
 
 <h1 align="center">
-  Websites to Show
+  Projects to Show
 </h1>
 
 This is a collection of websites that I have built using my skills &amp; knowledge. It shows my skills level and what ability I have (for employers)
