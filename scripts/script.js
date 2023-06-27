@@ -31,18 +31,6 @@ torchDivs.forEach(torchDiv => {
 });
 
 
-
-// const textPara = document.querySelector('.textdiv p')
-
-// console.log(textPara);
-
-
-// textPara.addEventListener('mousemove', (e)=>{
-//     console.log("g");
-//     console.log(e);
-    
-// })
-
 const textPara = document.querySelector('.textdiv p');
 const words = textPara.innerText.split(' ');
 
@@ -72,3 +60,27 @@ textPara.addEventListener('mousemove', (e) => {
         span.style.opacity = opacity.toFixed(2);
     });
 });
+
+
+
+
+
+const projectDiv = document.querySelectorAll('.projectDiv');
+
+projectDiv.forEach(element => {
+    let elID = element.id;
+    element.style.backgroundImage = `url('../assets/projects/${elID}/${elID}.png')`
+    element.style.backgroundSize = 'cover'
+    element.style.backgroundPosition = 'center'
+
+
+    element.addEventListener('mouseover', (event)=>{
+        element.style.backgroundImage = `url('../assets/projects/${elID}/${elID}.gif')` 
+    })
+
+    const projectName = element.getAttribute('data-projectName');
+    console.log(projectName);
+});
+
+
+

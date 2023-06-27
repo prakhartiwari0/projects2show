@@ -217,7 +217,6 @@ h1 a {
 	min-height: 12rem;
 	background-size: cover;
 	background-position: center;
-
 }
 
 .projectDivOverlay {
@@ -232,8 +231,6 @@ h1 a {
 		var(--dark-brown-lightness),
 		0.5
 	);
-
-	transition: 3s ease;
 }
 .projectDivOverlay a {
 	margin: 0.5rem;
@@ -251,13 +248,12 @@ h1 a {
 	display: flex;
 }
 
+
 #arito {
-	background: url('projects/arito/arito.gif');
 	background-size: cover;
 }
 
 #techdiagrams {
-	background: url('projects/techdiagrams/techdiagrams.gif');
 	background-size: cover;
 }
 
