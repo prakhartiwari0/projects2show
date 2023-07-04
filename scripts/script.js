@@ -41,13 +41,20 @@ projectDiv.forEach(element => {
     element.style.backgroundSize = 'cover'
     element.style.backgroundPosition = 'center'
 
-
+    
     element.addEventListener('mouseover', (event)=>{
         element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.gif')` 
     })
-
+    
     const projectName = element.getAttribute('data-projectName');
-    console.log(projectName);
+    const projectURL = element.getAttribute('data-projectURL');
+    const projectGitHub = element.getAttribute('data-projectGitHub');
+    element.title = projectName
+
+    element.querySelector('.projectLink').href = projectURL
+    element.querySelector('.projectRepoLink').href = projectGitHub
+
+
 });
 
 

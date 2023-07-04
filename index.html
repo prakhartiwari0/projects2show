@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/base.css">
 </head>
 <body class="basic_flexbox">
+
+
+
     
         <div class="torch_div left_top">
             <img src="assets/torch.png" alt="torch" class="lights blank_torch">
@@ -20,19 +23,28 @@
         </div>
 
 
+        <dialog class="projectInfoModal">
+            <button class="closeProjectInfoModalButton general_buttons material-symbols-outlined"
+            onclick="this.parentElement.close()"
+            >close</button>
+
+            <h1 class="pm_projectName"></h1>
+
+        </dialog>
+
     <header class="basic_flexbox">
         <h1><a href="https://www.heyprakhar.xyz" class="general_links" title="It's me :)">Prakhar</a>'s Projects</h1>
             <div class="textdiv customCursor" class="basic_flexbox">
                 <h2>Hello there!</h2>
                 <p>
-                    This is my projects page. It exists for 2 main reasons, 
+                    This is my projects page. It exists for 2 main reasons, that are to
                     
                     
-                    <br>👉 one is to <em>boast my skills</em> to fellow devs 😜, 
+                    <br>👉 <em>Boast😎</em> to other developers 😜, 
                     
-                    <br>👉 and the other is to <strong>show my skills</strong> to potential employers 🧐.
+                    <br>👉 <em><strong>Demonstrate my skills</strong></em> to potential employers 🧐 (#OpentoWork 💼)
 
-                    <br> I hope you like this place 😎.
+                    <br> I hope you like this place 😄
                 </p>
 
             </div>
@@ -55,15 +67,15 @@
         >
             
             <div class="projectDivOverlay basic_flexbox">
-                <a href="https://arito.netlify.app/" target="_blank" class="general_links">Open</a>
-                <a href="https://github.com/prakhartiwari0/arito" target="_blank" class="general_links">Show Code</a>
+                <a href="#" target="_blank" class="general_links projectLink">Open</a>
+                <a href="#" target="_blank" class="general_links projectRepoLink">Code</a>
 
                 <button class="projectInfoButton general_buttons material-symbols-outlined">info</button>
             </div>
             
         </div>
 
-            <div class="projectDiv basic_flexbox" id="techdiagrams"
+            <div class="projectDiv basic_flexbox" id="tech-diagrams"
             
             data-projectName='Tech Diagrams'
             data-projectURL='https://techdiagrams.netlify.app/'
@@ -72,8 +84,8 @@
             >
             
             <div class="projectDivOverlay basic_flexbox">
-                <a href="https://techdiagrams.netlify.app" target="_blank" class="general_links">Open</a>
-                <a href="https://github.com/prakhartiwari0/tech-diagrams" target="_blank" class="general_links">Show Code</a>
+                <a href="#" target="_blank" class="general_links projectLink">Open</a>
+                <a href="#" target="_blank" class="general_links projectRepoLink">Code</a>
                 <button class="projectInfoButton general_buttons material-symbols-outlined">info</button>
 
             </div>
@@ -87,5 +99,5 @@
 </body>
 
 
-<script src="scripts/script.js"></script>
+<script src="scripts/script.js" defer></script>
 </html>
