@@ -89,7 +89,7 @@ body.basic_flexbox {
 
 	justify-content: flex-start;
 }
-h1 {
+header h1 {
 	font-family: var(--fancy-heading-fontFamily);
 	color: var(--photons-color);
 	text-align: center;
@@ -100,7 +100,7 @@ h1 {
 
 	line-height: 3rem;
 }
-h1 a {
+header h1 a {
 	animation: neonEffect 2s infinite;
 	animation-delay: 1s;
 }
