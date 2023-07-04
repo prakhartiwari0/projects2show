@@ -69,13 +69,13 @@ const projectDiv = document.querySelectorAll('.projectDiv');
 
 projectDiv.forEach(element => {
     let elID = element.id;
-    element.style.backgroundImage = `url('projects2show/assets/projects/${elID}/${elID}.png')`
+    element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.png')`
     element.style.backgroundSize = 'cover'
     element.style.backgroundPosition = 'center'
 
 
     element.addEventListener('mouseover', (event)=>{
-        element.style.backgroundImage = `url('projects2show/assets/projects/${elID}/${elID}.gif')` 
+        element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.gif')` 
     })
 
     const projectName = element.getAttribute('data-projectName');
