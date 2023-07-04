@@ -31,38 +31,6 @@ torchDivs.forEach(torchDiv => {
 });
 
 
-const textPara = document.querySelector('.textdiv p');
-const words = textPara.innerText.split(' ');
-
-textPara.innerHTML = '';
-
-words.forEach((word, index) => {
-    const span = document.createElement('span');
-    span.textContent = word;
-    span.classList.add('fade');
-    textPara.appendChild(span);
-
-    if (index !== words.length - 1) {
-        const space = document.createTextNode(' ');
-        textPara.appendChild(space);
-    }
-});
-
-textPara.addEventListener('mousemove', (e) => {
-    const spans = textPara.querySelectorAll('span');
-    const mousePos = e.clientX - textPara.offsetLeft;
-
-    spans.forEach((span) => {
-        const spanPos = span.offsetLeft + span.offsetWidth / 2;
-        const distance = Math.abs(mousePos - spanPos);
-        const opacity = 1 - distance / (textPara.offsetWidth / 2);
-
-        span.style.opacity = opacity.toFixed(2);
-    });
-});
-
-
-
 
 
 const projectDiv = document.querySelectorAll('.projectDiv');
