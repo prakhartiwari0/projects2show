@@ -94,7 +94,7 @@ h1 {
 	color: var(--photons-color);
 	text-align: center;
 	border-radius: 1rem;
-	border: 5px dashed;
+	border: 5px dotted;
 	padding: 1rem;
 	width: fit-content;
 
@@ -187,28 +187,22 @@ h1 a {
 
 .textdiv {
 	font-family: var(--monospace-font-family);
+
+	font-size: 1.2rem;
 	margin: 2rem;
 	padding: 5rem;
 	padding-inline: 10rem;
+
+	text-align: left;
 }
 
 .textdiv p {
 	position: relative;
 	display: inline;
 	transition: opacity 0.3s ease;
+	opacity: .7;
 }
 
-.textdiv p span {
-	transition: opacity 0.3s ease;
-}
-
-.textdiv p:hover span {
-	opacity: 1;
-}
-
-.textdiv p span.fade {
-	opacity: 0.5;
-}
 
 .projectsDiv {
 	width: 90%;
@@ -299,7 +293,6 @@ h1 a {
 	}
 	.textdiv {
 		padding: 1rem;
-		text-align: center;
 	}
 
 	.left_top {
@@ -307,7 +300,6 @@ h1 a {
 	}
 	.projectDiv {
 		min-width: 90%;
-		/* min-height: 10rem; */
 	}
 	.projectDivOverlay a {
 		padding: 0.5rem;
