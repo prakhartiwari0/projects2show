@@ -86,7 +86,7 @@ body.basic_flexbox {
 
 	min-height: 100vh;
 	padding: 1rem;
-	border: 5px solid var(--lightest-photons-color);
+	/* border: 5px solid var(--lightest-photons-color); */
 
 	justify-content: flex-start;
 }
