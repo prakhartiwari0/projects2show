@@ -33,43 +33,149 @@ torchDivs.forEach(torchDiv => {
 
 
 
-const projectDiv = document.querySelectorAll('.projectDiv');
+
+
+
+
+const projectsDiv = document.querySelector('.projectsDiv');
+
+fetch('../assets/projects.json').then(function (response) {
+    return response.json();
+
+}).then(function (obj) {
+    projectDivsCreator(obj)
+
+}).catch(function (error) {
+    console.log(error);
+})
+
+function projectDivsCreator(allProjectsDataObject) {
+    // console.log(allProjectsDataObject);
+
+    let projectDivElementHTMLCode = `
+    
+        <div class="projectDiv basic_flexbox" id="arito" 
+        
+        data-projectName='Arito'
+        data-projectURL='https://arito.netlify.app/'
+        data-projectGitHub='https://github.com/prakhartiwari0/arito'
+
+        data-projectInfo='Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody.'
+        
+        >
+            
+            <div class="projectDivOverlay basic_flexbox">
+                <a href="#" target="_blank" class="general_links projectLink">Open</a>
+                <a href="#" target="_blank" class="general_links projectRepoLink">Code</a>
+
+                <button class="projectInfoButton general_buttons material-symbols-outlined">info</button>
+            </div>
+            
+        </div>
+
+    `
+
+    Object.keys(allProjectsDataObject).forEach(function (key) {
+
+        let newProjectDiv = document.createElement('div')
+        newProjectDiv.classList.add('projectDiv', 'basic_flexbox')
+
+        let newProjectDivOverlay = document.createElement('div')
+        newProjectDivOverlay.classList.add('projectDivOverlay', 'basic_flexbox')
+
+        let projectLinkAnchorElement = document.createElement('a')
+        projectLinkAnchorElement.textContent = "Open"
+        projectLinkAnchorElement.classList.add('projectLink', 'general_links')
+        projectLinkAnchorElement.target = '_blank'
+
+        let projectGitHubAnchorElement = document.createElement('a')
+        projectGitHubAnchorElement.target = '_blank'
+        projectGitHubAnchorElement.textContent = "Code"
+        projectGitHubAnchorElement.classList.add('projectRepoLink', 'general_links')
+
+
+        let projectInfoButtonElement = document.createElement('button')
+        projectInfoButtonElement.classList.add('projectInfoButton', 'general_buttons', 'material-symbols-outlined')
+        projectInfoButtonElement.textContent = "info"
+
+
+
+        newProjectDivOverlay.appendChild(projectLinkAnchorElement)
+        newProjectDivOverlay.appendChild(projectGitHubAnchorElement)
+        newProjectDivOverlay.appendChild(projectInfoButtonElement)
+
+        newProjectDiv.appendChild(newProjectDivOverlay)
+
+        const projectID = key
+        newProjectDiv.id = projectID
+        const projectData = allProjectsDataObject[key]
+
+        Object.keys(projectData).forEach(function (dataAttribute) {
+            const dataAttributeValue = projectData[dataAttribute]
+
+
+            newProjectDiv.setAttribute(`data-${dataAttribute}`, dataAttributeValue)
+
+        })
+
+        // console.log(eachProjectObject);
+
+
+
+
+        projectsDiv.appendChild(newProjectDiv)
+    });
+
+    projectsDivSetter()
+
+}
+
+
+function projectsDivSetter(){
+
+    
+    const projectDiv = document.querySelectorAll('.projectDiv');
 
 projectDiv.forEach(element => {
     let elID = element.id;
     element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.png')`
     element.style.backgroundSize = 'cover'
     element.style.backgroundPosition = 'center'
-
+    
     
     element.addEventListener('click', (event)=>{
         element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.gif')` 
     })
     
-    const projectName = element.getAttribute('data-projectName');
-    const projectURL = element.getAttribute('data-projectURL');
-    const projectGitHub = element.getAttribute('data-projectGitHub');
+    const projectName = element.getAttribute('data-projectname');
+    const projectURL = element.getAttribute('data-projecturl');
+    const projectGitHub = element.getAttribute('data-projectgithub');
     element.title = projectName
-
+    
     element.querySelector('.projectLink').href = projectURL
     element.querySelector('.projectRepoLink').href = projectGitHub
 
 
 });
 
+    ModalCreator()
 
+}
 
+function ModalCreator(){
 
-const projectInfoButton = document.querySelectorAll('.projectInfoButton');
-
-
-const projectInfoModal = document.querySelector('.projectInfoModal');
-const closeProjectInfoModalButton = document.querySelector('.closeProjectInfoModalButton');
-closeProjectInfoModalButton.addEventListener('click', () => { projectInfoModal.close(); projectInfoModal.style.display='none' })
+    
+    const projectInfoButton = document.querySelectorAll('.projectInfoButton');
+    
+    const projectInfoModal = document.querySelector('.projectInfoModal');
+    const closeProjectInfoModalButton = document.querySelector('.closeProjectInfoModalButton');
+closeProjectInfoModalButton.addEventListener('click', () => {
+    projectInfoModal.close();
+    projectInfoModal.style.display='none'
+})
 
 projectInfoButton.forEach((element)=>{
     element.addEventListener('click', ()=>{
-        console.log(element.parentElement.parentElement);
         const projectName = element.parentElement.parentElement.getAttribute('data-projectName')
         const projectInfo = element.parentElement.parentElement.getAttribute('data-projectInfo')
         const projectURL = element.parentElement.parentElement.getAttribute('data-projectURL');
@@ -80,10 +186,11 @@ projectInfoButton.forEach((element)=>{
         
         projectInfoModal.querySelector('.pm_projectName').textContent = projectName
         projectInfoModal.querySelector('.pm_projectAbout').textContent = projectInfo
-
+        
         projectInfoModal.querySelector('.pm_projectLink').href = projectURL
         projectInfoModal.querySelector('.pm_projectRepoLink').href = projectGitHub
         
     })
 }
 )
+    }
