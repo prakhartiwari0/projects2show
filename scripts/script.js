@@ -39,7 +39,7 @@ torchDivs.forEach(torchDiv => {
 
 const projectsDiv = document.querySelector('.projectsDiv');
 
-fetch('../assets/projects.json').then(function (response) {
+fetch('./assets/projects.json').then(function (response) {
     return response.json();
 
 }).then(function (obj) {
@@ -50,30 +50,6 @@ fetch('../assets/projects.json').then(function (response) {
 })
 
 function projectDivsCreator(allProjectsDataObject) {
-    // console.log(allProjectsDataObject);
-
-    let projectDivElementHTMLCode = `
-    
-        <div class="projectDiv basic_flexbox" id="arito" 
-        
-        data-projectName='Arito'
-        data-projectURL='https://arito.netlify.app/'
-        data-projectGitHub='https://github.com/prakhartiwari0/arito'
-
-        data-projectInfo='Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody.'
-        
-        >
-            
-            <div class="projectDivOverlay basic_flexbox">
-                <a href="#" target="_blank" class="general_links projectLink">Open</a>
-                <a href="#" target="_blank" class="general_links projectRepoLink">Code</a>
-
-                <button class="projectInfoButton general_buttons material-symbols-outlined">info</button>
-            </div>
-            
-        </div>
-
-    `
 
     Object.keys(allProjectsDataObject).forEach(function (key) {
 
