@@ -4,6 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0');
 
+
+/* -------------- ROOT STYLES -------------- */
+
 *,
 ::after,
 ::before {
@@ -79,43 +82,19 @@
 	cursor: pointer;
 }
 
+
+
 body.basic_flexbox {
 	background-color: var(--dark-brown);
 	color: white;
 	position: relative;
 
 	min-height: 100vh;
-	padding: 1rem;
 
 	justify-content: flex-start;
 }
-header h1 {
-	font-family: var(--fancy-heading-fontFamily);
-	color: var(--photons-color);
-	text-align: center;
-	border-radius: 1rem;
-	border: 5px dotted;
-	padding: 1rem;
-	width: fit-content;
 
-	line-height: 3rem;
-}
-header h1 a {
-	animation: neonEffect 2s infinite;
-	animation-delay: 1s;
-}
-
-@keyframes neonEffect {
-	0% {
-		color: var(--lighter-photons-color);
-	}
-	50% {
-		color: var(--lightest-photons-color);
-	}
-	100% {
-		color: var(--lighter-photons-color);
-	}
-}
+/* -------------- TORCHES -------------- */
 
 .torch_div {
 	user-select: none;
@@ -165,7 +144,6 @@ header h1 a {
 		box-shadow: 0px 0px 155px 55px var(--photons-color);
 	}
 }
-
 .lights {
 	cursor: pointer;
 	border-radius: 100%;
@@ -185,6 +163,42 @@ header h1 a {
 	rotate: -30deg;
 }
 
+/* -------------- HEADER -------------- */
+
+header h1 {
+	font-family: var(--fancy-heading-fontFamily);
+	text-align: center;
+	padding: 1rem;
+	width: fit-content;
+	
+	line-height: 3rem;
+	
+	/* background-color: var(--); */
+	color: var(--photons-color);
+	
+	border: 5px solid;
+	border-top: none;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	
+}
+header h1 a {
+	animation: neonEffect 2s infinite;
+	animation-delay: 1s;
+}
+
+@keyframes neonEffect {
+	0% {
+		color: var(--lighter-photons-color);
+	}
+	50% {
+		color: var(--lightest-photons-color);
+	}
+	100% {
+		color: var(--lighter-photons-color);
+	}
+}
+
 .textdiv {
 	font-family: var(--monospace-font-family);
 
@@ -200,9 +214,11 @@ header h1 a {
 	position: relative;
 	display: inline;
 	transition: opacity 0.3s ease;
-	opacity: .7;
+	opacity: 0.7;
 }
 
+
+/* ------- PROJECTS DIV -------- */
 
 .projectsDiv {
 	width: 90%;
@@ -219,12 +235,13 @@ header h1 a {
 }
 .projectDiv {
 	border-radius: 1rem;
-	border: 3px solid var(--photons-color);
+	/* border: 3px solid var(--photons-color); */
+
+	box-shadow: -5px 5px 1px 0px var(--lightest-photons-color);
 
 	min-width: 25rem;
 	min-height: 15rem;
 }
-
 .projectDivOverlay {
 	display: none;
 
@@ -253,7 +270,6 @@ header h1 a {
 	font-family: var(--monospace-font-family);
 	font-weight: 900;
 }
-
 .projectInfoButton {
 	position: absolute;
 	top: 0.5rem;
@@ -270,6 +286,74 @@ header h1 a {
 	opacity: 1;
 }
 
+
+/* -------------- PROJECTS INFO MODAL -------------- */
+.projectInfoModal {
+	margin: auto;
+	position: fixed;
+	padding: 1rem;
+
+	display: none;
+	background-color: var(--dark-brown);
+
+	color: var(--lightest-photons-color);
+
+	border-radius: 2rem;
+	border: none;
+
+	width: max(60%, 300px);
+	width: 60%;
+
+	box-shadow: -5px 5px 1px 0px var(--lightest-photons-color);
+
+}
+.projectInfoModal::backdrop {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.pm_projectAbout{
+	padding: 1rem;
+}
+.projectLinksDiv{
+	display: none;
+
+
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+.projectLinksDiv a{
+	margin: 0.5rem;
+	padding: 1rem;
+	font-size: 1rem;
+	border: 2px solid var(--photons-color);
+	color: var(--dark-brown);
+	background-color: var(--photons-color);
+	border-radius: 1rem;
+	font-family: var(--monospace-font-family);
+	font-weight: 900;
+
+}
+
+
+.closeProjectInfoModalButton {
+	display: flex;
+	padding: 0.3rem;
+
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	opacity: 0.7;
+	border-radius: 100%;
+}
+
+.closeProjectInfoModalButton:hover {
+	opacity: 1;
+}
+
+
+/* -------------- MEDIA QUERIES -------------- */
+
 @media screen and (max-width: 930px) {
 	.torch_div {
 		top: 15vh;
@@ -278,6 +362,12 @@ header h1 a {
 	}
 	.textdiv {
 		padding: 1rem;
+	}
+	.projectLinksDiv{
+		display: flex;
+	}
+	.projectDivOverlay a {
+		display: none;
 	}
 }
 
@@ -296,15 +386,12 @@ header h1 a {
 	}
 
 	.left_top {
-		top: 100vh;
+		top: 13%;
+	}
+	.right_top {
+		top: 50%;
 	}
 	.projectDiv {
 		min-width: 90%;
-	}
-	.projectDivOverlay a {
-		padding: 0.5rem;
-		font-size: 0.7rem;
-		margin-block: 1.3rem;
-		display: none;
 	}
 }

@@ -42,7 +42,7 @@ projectDiv.forEach(element => {
     element.style.backgroundPosition = 'center'
 
     
-    element.addEventListener('mouseover', (event)=>{
+    element.addEventListener('click', (event)=>{
         element.style.backgroundImage = `url('./assets/projects/${elID}/${elID}.gif')` 
     })
     
@@ -59,3 +59,31 @@ projectDiv.forEach(element => {
 
 
 
+
+const projectInfoButton = document.querySelectorAll('.projectInfoButton');
+
+
+const projectInfoModal = document.querySelector('.projectInfoModal');
+const closeProjectInfoModalButton = document.querySelector('.closeProjectInfoModalButton');
+closeProjectInfoModalButton.addEventListener('click', () => { projectInfoModal.close(); projectInfoModal.style.display='none' })
+
+projectInfoButton.forEach((element)=>{
+    element.addEventListener('click', ()=>{
+        console.log(element.parentElement.parentElement);
+        const projectName = element.parentElement.parentElement.getAttribute('data-projectName')
+        const projectInfo = element.parentElement.parentElement.getAttribute('data-projectInfo')
+        const projectURL = element.parentElement.parentElement.getAttribute('data-projectURL');
+        const projectGitHub = element.parentElement.parentElement.getAttribute('data-projectGitHub');
+        
+        projectInfoModal.style.display = 'flex'
+        projectInfoModal.showModal()
+        
+        projectInfoModal.querySelector('.pm_projectName').textContent = projectName
+        projectInfoModal.querySelector('.pm_projectAbout').textContent = projectInfo
+
+        projectInfoModal.querySelector('.pm_projectLink').href = projectURL
+        projectInfoModal.querySelector('.pm_projectRepoLink').href = projectGitHub
+        
+    })
+}
+)
