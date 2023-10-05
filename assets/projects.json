@@ -3,16 +3,16 @@
 
     "arito":{
         "projectName":"Arito",
-        "projectURL":"https: //arito.netlify.app/",
-        "projectGitHub": "https: //github.com/prakhartiwari0/arito",
-        "projectInfo":"Arito is a WebApp built for practicing arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody."
+        "projectURL":"https://arito.netlify.app/",
+        "projectGitHub": "https://github.com/prakhartiwari0/arito",
+        "projectInfo":"Arito is a WebApp built for practising arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody."
     },
 
     "tech-diagrams":{
 
         "projectName": "Tech Diagrams",
-        "projectURL": "https: //techdiagrams.netlify.app/",
-        "projectGitHub": "https: //github.com/prakhartiwari0/tech-diagrams",
+        "projectURL": "https://techdiagrams.netlify.app/",
+        "projectGitHub": "https://github.com/prakhartiwari0/tech-diagrams",
         "projectInfo": "The online collection of illustrative and informative Diagrams to explain various topics in technology"
     }
 
