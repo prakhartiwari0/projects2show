@@ -3,12 +3,12 @@
         "projectName": "Arito",
         "projectURL": "https://arito.netlify.app/",
         "projectGitHub": "https://github.com/prakhartiwari0/arito",
-        "projectInfo": "Arito is a WebApp built for practising arithmetic skills. It is designed with creativity and to have a joyful experience. It is built primarily for kids who need to practice their mathematical skills, but this can be used by anybody."
+        "projectInfo": "Designed with Creativity for kids, Arito is a WebApp built for practising arithmetic skills. I built a Python GUI App on the same idea for my little sister when I newly learned that language, but after starting Web Development, I decided to build a better version on the web that would be more accessible and joyful. Have helped a father's daughters, a brother's sister, and don't know how many others through this nice little app."
     },
     "my-web-shortcuts": {
         "projectName": "My Web Shortcuts",
         "projectURL": "https://www.mywebshortcuts.xyz/",
         "projectGitHub": "https://github.com/mywebshortcuts/mywebshortcuts",
-        "projectInfo": "A Browser Extension to create custom keyboard shortcuts in a website."
+        "projectInfo": "A Browser Extension to create custom keyboard shortcuts in a website. I used to face this problem of repetitive clicking of certain elements that was frustrating, I started wondering if there's a chrome extension to create keyboard shortcuts to click on them. To my surprise, I didn't find anything like that, so I thought why not build it then? I talked to a few people and got a positive response. Built the basic version in about 1.5 months, in Vanilla JS, no framework (because I didn't know one yet), with a lot of effort, and launched it on Product Hunt. The users are growing steadily, already crossed 100 users, such a good feeling to have something out in the market used by so many people!"
     }
 }
